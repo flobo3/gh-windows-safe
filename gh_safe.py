@@ -34,6 +34,9 @@ def main():
         # Handle escaped newlines from command line
         body_content = body_content.replace("\\n", "\n")
         
+        # Handle escaped backticks from CMD
+        body_content = body_content.replace("\\`", "`")
+        
         with open(temp_file_path, "w", encoding="utf-8") as f:
             f.write(body_content)
             
